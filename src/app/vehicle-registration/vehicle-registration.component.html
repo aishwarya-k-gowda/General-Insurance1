@@ -1,0 +1,125 @@
+<hr/>
+
+<br><br> <br> <br> <br> <br>
+<div> <br> </div> <div> <br> </div>
+   
+<form [formGroup]="vehicleregistration" #form="ngForm" (ngSubmit)="submitData(form.value)">
+    <div class="header">
+        <h1>Please Enter Your Vehicle Details Here </h1>
+    </div>
+   
+    
+    <div class="form-group">
+    <label for="cars">Vehicle types:</label>
+
+    <select id="vehicleType" class="form-control"   name="vehicleType" formControlName="vehicleType">
+      <option value="2-wheeler">2-wheeler</option>
+      <option value="4-wheeler">4-wheeler</option>
+     
+    </select>
+   </div> <br>
+
+    <div class="form-group">
+        <label for="manufacturer">please enter your Vehicle Manufacturer:&nbsp;</label>
+        <input type="text" class="form-control" name="manufacturer" id="manufacturer" formControlName="manufacturer">
+    </div> 
+
+   <div [hidden]="vehicleregistration.controls['manufacturer'].valid || vehicleregistration.controls['manufacturer'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['manufacturer'].errors?.['required']">
+            please enter your Vehicle Manufacturer
+        </div>
+    </div>  <br>
+    
+    <div class="form-group">
+        <label for="model">Please enter your Full Name:&nbsp;</label>
+        <input type="text" class="form-control" name="fullname" id="fullname" formControlName="fullname">
+    </div> 
+
+    <div [hidden]="vehicleregistration.controls['fullname'].valid || vehicleregistration.controls['fullname'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['fullname'].errors?.['required']">
+            please enter your Full Name
+        </div>
+    </div> <br>
+
+    <div class="form-group">
+        <label for="model">Please enter your Vehicle Model:&nbsp;</label>
+        <input type="text" class="form-control" name="model" id="Model" formControlName="model">
+    </div> 
+
+    <div [hidden]="vehicleregistration.controls['model'].valid || vehicleregistration.controls['model'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['model'].errors?.['required']">
+            Please enter your Vehicle Model
+        </div> 
+
+
+    </div> <br>
+
+    <div class="form-group">
+        <label for="drivingLicenseNumber">Please enter your DrivingLicenseNumber:&nbsp;</label>
+        <input type="text" class="form-control" name="drivingLicenseNumber" id="drivingLicenseNumber"
+            formControlName="drivingLicenseNumber">
+    </div> 
+
+    <div [hidden]="vehicleregistration.controls['drivingLicenseNumber'].valid || vehicleregistration.controls['drivingLicenseNumber'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['drivingLicenseNumber'].errors?.['required']">
+            Please enter your DrivingLicenseNumber
+        </div>
+
+    </div> <br>
+
+    <div class="form-group">
+        <label for="registrationNumber">Enter your RegistrationNumber:&nbsp;</label>
+        <input type="text" class="form-control" name="registrationNumber" id="registrationNumber"
+            formControlName="registrationNumber">
+    </div>
+
+    <div [hidden]="vehicleregistration.controls['registrationNumber'].valid || vehicleregistration.controls['registrationNumber'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['registrationNumber '].errors?.['required']">
+            kindly provide RegistrationNumber
+        </div>
+    </div> <br>
+
+    <div class="form-group">
+        <label for="engineNumber">please enter your EngineNumber:&nbsp;</label>
+        <input type="text" class="form-control" name="engineNumber" id="engineNumber" formControlName="engineNumber">
+    </div> 
+
+    <!-- <div [hidden]="vehicleregistration.controls['engineNumber'].valid || vehicleregistration.controls['engineNumber'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['engineNumber'].errors?.['required']">
+            please provide your EngineNumber
+        </div>
+    </div> --> <br>
+
+    <div class="form-group">
+        <label for="chassisNumber">Enter your ChasisNumber:&nbsp;</label>
+        <input type="text" class="form-control" name="chassisNumber" id="chassisNumber" formControlName="chassisNumber">
+    </div> <br>
+<!-- 
+    <div [hidden]="vehicleregistration.controls['chassisNumber'].valid || vehicleregistration.controls['chassisNumber'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['chassisNumber'].errors?.['required']">
+            please enter the ChasisNumber
+        </div>
+    </div> -->
+
+
+
+
+    <div id="submitDiv">
+        <button type="submit" class="btn btn-success"   [disabled]="!vehicleregistration.valid">Submit</button>
+        <br>
+        <br>
+        <button class="btn btn-success" routerLink="/plan-table" style="color: rgb(12, 12, 12);">
+            Next
+        </button>
+    </div>
+
+
+    
+</form>
