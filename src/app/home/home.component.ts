@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RouterLink } from '@angular/router';
+import {  ClaimComponent} from "../claim/claim.component";
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

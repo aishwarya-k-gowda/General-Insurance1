@@ -1,0 +1,58 @@
+
+<br> <br> <br>
+<div class="head">
+  <h1>
+      Choose your Plan
+  </h1>
+</div>
+<body class="box" style="font-size:larger">
+<form [formGroup]="PlanTypeForm" (ngSubmit)="onPlanSubmit(PlanTypeForm.value)"> 
+  
+    <div class="header">
+        <h1 style=" border:10px;color: rgb(13, 43, 92); text-align:center;">Choose Your Plan Details Here </h1>
+    </div>
+   
+    
+    <div class="form-group">
+    <label for="cars">Plan types:</label>
+
+    <select id="planName" class="form-control"  name="planName" formControlName="planName">
+      <option value="third party liability">Third party liability</option> 
+      <option value="comprehensive">Comprehensive</option>
+     
+    </select>
+<br> <br> &nbsp;
+    <div id="submitDiv">
+      <button type="submit" style="color: black; background-color: blue; font-size: large;" class="btn btn-block btn-success">Choose</button>  
+    </div>
+
+   </div> <br>
+
+   </form>
+
+   <form [formGroup]="PlanDurationForm" (ngSubmit)="onDurationSubmit(PlanDurationForm.value)"> 
+   <div class="form-group">
+    <label for="cars">Plan duration:</label>
+
+    <select id="durationValue" class="form-control"  name="durationValue" formControlName="durationValue">
+      <option value="one year">ONE YEAR</option>
+      <option value="two year">TWO YEAR</option>
+      <option value="three year">THREE YEAR</option>
+    </select> <br> &nbsp;
+    <div id="submitDiv">
+      <button type="submit" style="color: black; background-color: blue; font-size: large;" class="btn btn-block btn-success">Submit</button>  
+    </div>
+   </div>
+   
+   <br>
+  </form>
+  <form  #form="ngForm" (ngSubmit)="submitData(form.value)">
+  <div style="text-align: center;">
+  <button type="submit" class="payment-button" (click)="onclick()" >Make payment</button> &nbsp;
+
+   <button type="submit" class="btn btn-block btn-success" routerLink="/payment">Next</button> 
+  </div>
+
+  </form>
+
+</body>

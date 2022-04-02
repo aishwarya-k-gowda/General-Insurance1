@@ -1,0 +1,14 @@
+p.secret {
+    display: none;
+  }
+
+  .pay {
+      align-content: center;
+      padding: 30px;
+      font-size: larger;
+       
+  }
+  
+  .outer > div {
+    border: 1px solid green;
+  }

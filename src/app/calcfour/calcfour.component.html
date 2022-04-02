@@ -1,0 +1,38 @@
+<div class="h1">
+    <h1>
+        Premium Calculation For 4 Wheelers
+    </h1>
+</div>
+
+<div class="box">
+    <div class="formgroup">
+    <input type="text" placeholder="Car Model" required class="form-control">
+<br>
+<br>
+    <input [(ngModel)]='age' type="text"placeholder="Age" required=""  class="form-control">
+<br>
+<br>
+</div>
+
+    <button (click)="calculate()" >
+        Calculate Premium 
+    </button>
+
+    <br>
+    <br>
+    
+    <p>{{result}}</p>
+    
+   
+   
+</div>
+
+<br> <br> 
+<div style="text-align: center;">
+<div > <button type="submit"  style="background-color:rgb(11, 41, 192); font-size: large; color: white;" class="btn btn-primary" routerLink="/calculate-insurance">Go Back</button> </div>
+
+&nbsp; &nbsp;
+
+<div > <button type="submit" style="background-color:cornsilk; font-size: large;" class="btn btn-primary" routerLink="/home">Home</button> </div>
+</div>
+<router-outlet></router-outlet>

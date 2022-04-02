@@ -1,26 +1,34 @@
-<hr/>
+<body style="text-align: justify;">
 
-<br><br> <br> <br> <br> <br>
-<div> <br> </div> <div> <br> </div>
+
+<div> <br> </div> 
+
+<div class="head">
+    <h1>Add Vehicle Details</h1>
+    </div>
    
-<form [formGroup]="vehicleregistration" #form="ngForm" (ngSubmit)="submitData(form.value)">
-    <div class="header">
-        <h1>Please Enter Your Vehicle Details Here </h1>
+<form [formGroup]="vehicleregistration" #formdata="ngForm" (ngSubmit)="submitData(formdata.value)">
+    <div style="text-align: center;" class="box1">  
+    <div class="header" >
+     <br>   <h1>Please Enter Your Vehicle Details Here </h1>
     </div>
    
     
     <div class="form-group">
-    <label for="cars">Vehicle types:</label>
-
+ <label for="vehicleType" style="font-size: larger; color:white ;background-color:rgb(20, 28, 99); border:2px black;padding: 5px; "><b>Vehicle types</b>  </label>
+    &nbsp; 
     <select id="vehicleType" class="form-control"   name="vehicleType" formControlName="vehicleType">
       <option value="2-wheeler">2-wheeler</option>
       <option value="4-wheeler">4-wheeler</option>
      
-    </select>
-   </div> <br>
+    </select> 
+    </div>
+    <!-- <label for="form-group">please enter your Vehicle Type:&nbsp;</label>
+        <input type="text" class="form-control" name="vehicleType" id="vehicleType" formControlName="vehicleType">
+   </div> <br> -->
 
-    <div class="form-group">
-        <label for="manufacturer">please enter your Vehicle Manufacturer:&nbsp;</label>
+   <div class="form-group" style="text-align: justify;" >
+        <label for="manufacturer">Enter your Vehicle Manufacturer:&nbsp;</label>
         <input type="text" class="form-control" name="manufacturer" id="manufacturer" formControlName="manufacturer">
     </div> 
 
@@ -29,23 +37,23 @@
         <div *ngIf="vehicleregistration.controls['manufacturer'].errors?.['required']">
             please enter your Vehicle Manufacturer
         </div>
-    </div>  <br>
-    
+    </div>  
+   <!-- 
     <div class="form-group">
         <label for="model">Please enter your Full Name:&nbsp;</label>
-        <input type="text" class="form-control" name="fullname" id="fullname" formControlName="fullname">
+        <input type="text" class="form-control" name="customerName" id="customerName" formControlName="customerName">
     </div> 
 
-    <div [hidden]="vehicleregistration.controls['fullname'].valid || vehicleregistration.controls['fullname'].pristine"
+    <div [hidden]="vehicleregistration.controls['customerName'].valid || vehicleregistration.controls['customerName'].pristine"
         class="alert alert-danger">
-        <div *ngIf="vehicleregistration.controls['fullname'].errors?.['required']">
+        <div *ngIf="vehicleregistration.controls['customerName'].errors?.['required']">
             please enter your Full Name
         </div>
-    </div> <br>
+    </div> <br> -->
 
-    <div class="form-group">
-        <label for="model">Please enter your Vehicle Model:&nbsp;</label>
-        <input type="text" class="form-control" name="model" id="Model" formControlName="model">
+    <div class="form-group" style="text-align: justify;" >
+        <label for="model">Enter your Vehicle Model:&nbsp;</label>
+        <input type="text" class="form-control" name="model" id="model" formControlName="model">
     </div> 
 
     <div [hidden]="vehicleregistration.controls['model'].valid || vehicleregistration.controls['model'].pristine"
@@ -55,10 +63,10 @@
         </div> 
 
 
-    </div> <br>
+    </div> 
 
-    <div class="form-group">
-        <label for="drivingLicenseNumber">Please enter your DrivingLicenseNumber:&nbsp;</label>
+    <div class="form-group" style="text-align: justify;" >
+        <label for="drivingLicenseNumber">Enter your DrivingLicenseNumber:&nbsp;</label>
         <input type="text" class="form-control" name="drivingLicenseNumber" id="drivingLicenseNumber"
             formControlName="drivingLicenseNumber">
     </div> 
@@ -69,9 +77,23 @@
             Please enter your DrivingLicenseNumber
         </div>
 
-    </div> <br>
-
+    </div> 
+<!-- 
     <div class="form-group">
+        <label for="purchaseDate">Please enter your Purchase Date:&nbsp;</label>
+        <input type="Date" class="form-control" name="purchaseDate" id="purchaseDate"
+            formControlName="purchaseDate">
+    </div> 
+
+    <div [hidden]="vehicleregistration.controls['purchaseDate'].valid || vehicleregistration.controls['drivingLicenseNumber'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="vehicleregistration.controls['purchaseDate'].errors?.['required']">
+            Please enter your purchaseDate
+        </div>
+
+    </div> <br> -->
+
+    <div class="form-group" style="text-align: justify;" >
         <label for="registrationNumber">Enter your RegistrationNumber:&nbsp;</label>
         <input type="text" class="form-control" name="registrationNumber" id="registrationNumber"
             formControlName="registrationNumber">
@@ -79,47 +101,60 @@
 
     <div [hidden]="vehicleregistration.controls['registrationNumber'].valid || vehicleregistration.controls['registrationNumber'].pristine"
         class="alert alert-danger">
-        <div *ngIf="vehicleregistration.controls['registrationNumber '].errors?.['required']">
+        <div *ngIf="vehicleregistration.controls['registrationNumber'].errors?.['required']">
             kindly provide RegistrationNumber
         </div>
-    </div> <br>
+    </div> 
 
-    <div class="form-group">
-        <label for="engineNumber">please enter your EngineNumber:&nbsp;</label>
+    <div class="form-group" style="text-align: justify;" >
+        <label for="engineNumber">Enter your EngineNumber:&nbsp;</label>
         <input type="text" class="form-control" name="engineNumber" id="engineNumber" formControlName="engineNumber">
     </div> 
 
-    <!-- <div [hidden]="vehicleregistration.controls['engineNumber'].valid || vehicleregistration.controls['engineNumber'].pristine"
+     <div [hidden]="vehicleregistration.controls['engineNumber'].valid || vehicleregistration.controls['engineNumber'].pristine"
         class="alert alert-danger">
         <div *ngIf="vehicleregistration.controls['engineNumber'].errors?.['required']">
             please provide your EngineNumber
         </div>
-    </div> --> <br>
+    </div>  
 
-    <div class="form-group">
-        <label for="chassisNumber">Enter your ChasisNumber:&nbsp;</label>
-        <input type="text" class="form-control" name="chassisNumber" id="chassisNumber" formControlName="chassisNumber">
+    <div class="form-group" style="text-align: justify;" >
+        <label for="chasisNumber">Enter your ChassisNumber:&nbsp;</label>
+        <input type="text" class="form-control" name="chasisNumber" id="chasisNumber" formControlName="chasisNumber">
     </div> <br>
-<!-- 
-    <div [hidden]="vehicleregistration.controls['chassisNumber'].valid || vehicleregistration.controls['chassisNumber'].pristine"
+
+    <div [hidden]="vehicleregistration.controls['chasisNumber'].valid || vehicleregistration.controls['chasisNumber'].pristine"
         class="alert alert-danger">
-        <div *ngIf="vehicleregistration.controls['chassisNumber'].errors?.['required']">
+        <div *ngIf="vehicleregistration.controls['chasisNumber'].errors?.['required']">
             please enter the ChasisNumber
         </div>
-    </div> -->
+    </div> 
+
+    <div class="form-group" style="text-align: justify;" >
+        <label for="vehicleAge">Enter your Vehicle Age:&nbsp;</label>
+        <input type="number" class="form-control" name="vehicleAge" id="vehicleAge" formControlName="vehicleAge">
+    </div>  <br> 
+    <div> <br> <br></div>
 
 
 
 
-    <div id="submitDiv">
+    <div id="submitDiv">                                
         <button type="submit" class="btn btn-success"   [disabled]="!vehicleregistration.valid">Submit</button>
         <br>
         <br>
-        <button class="btn btn-success" routerLink="/plan-table" style="color: rgb(12, 12, 12);">
+        <button class="btn btn-success" routerLink="/plan-table" style="color: rgb(248, 247, 247);">
             Next
         </button>
     </div>
-
+</div><div></div>
 
     
 </form>
+
+</body>
+
+
+<!-- <div class="head2">
+    <h1></h1>
+    </div> -->

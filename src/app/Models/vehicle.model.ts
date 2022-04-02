@@ -1,21 +1,22 @@
+
+
 export interface Vehicles {
 
     vehicleType: string;
 
     manufacturer: string;
 
-    fullname: string;
-
     model: string;
 
     drivingLicenseNumber: string;
+
+   // purchaseDate : Date;
 
     registrationNumber: string;
 
     engineNumber: string;
 
-    chassisNumber: string;
+    chasisNumber: string;
 
-    customerId?: number;
-
+    vehicleAge: number;
 }

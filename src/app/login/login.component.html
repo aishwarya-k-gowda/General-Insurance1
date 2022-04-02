@@ -1,0 +1,30 @@
+<div class="head">
+
+<b>    <h1 style="text-align:center;color:white;margin-top: 70px;"> Login Page</h1> </b>
+
+</div>
+<body style="text-align:center;margin-top: 100px; font-size: xx-large;">
+    
+  <div class="col-6 offset-3" >
+    <form>
+        <div class="box1"> <br>
+     <div class="form-group" style="color:black">
+            <label for="email"><b>Email:</b></label> &nbsp;
+            <input type="text" style="font-size: large; border: 2px;" class="form-control" id="email" name="email" [(ngModel)]="user.email" required>
+        </div> <br>
+        <div class="form-group">
+            <label for="password"><b>Password:</b></label> &nbsp;
+            <input type="text" style="font-size: large; border:2px;" class="form-control" id="password" name="password" [(ngModel)]="user.password" minlength="7" maxlength="20" required>
+        </div> <br>
+            
+        <input type="submit"  style="font-size: large;"class="btn btn-outline-danger"  value="Login" (click)="onFormSubmit()"  routerLink="/vehicle-registration">   &nbsp;
+        <input type="reset" style="font-size:large;float: center;" class="btn btn-outline-dark"  value="Clear">
+        </div>
+    
+    </form>
+    <div class="alert alert-info mt-2" *ngIf="msg">{{msg}}</div>
+
+</div>
+
+</body>
+

@@ -1,9 +1,9 @@
-
-
-import { Component, OnInit } from '@angular/core';
-import { FormGroup,Validators, FormBuilder } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { VehicleTypes } from '../Models/vehicletypes';
+import { HttpErrorResponse } from "@angular/common/http";
 import { Vehicles } from '../Models/vehicle.model';
+
 import { VehicleregistrationService } from '../vehicleregistration.service';
 import { Router } from '@angular/router';
 
@@ -16,48 +16,24 @@ import { Router } from '@angular/router';
 export class VehicleRegistrationComponent implements OnInit {
 
     private _vehicleregistration: FormGroup = this._fb.group({
-        manufacturer: ['',
-            [Validators.required]
-        ],
+        manufacturer: ['',[Validators.required]],
       
-        model: [
-            '',
-            [Validators.required]
-        ],
+        model: [ '', [Validators.required]],
 
         drivingLicenseNumber: ['', [Validators.required]],
-        registrationNumber: [
-            '',
-            [
-                Validators.required
 
-            ]
-        ],
-        engineNumber: [
-            '',
-            [
-               
-                Validators.required
-            ]
-        ],
-        chassisNumber: [
-            '',
-            [
-                Validators.required
+        registrationNumber: [ '',[Validators.required ] ],
 
-            ]
+        engineNumber: [ '', [Validators.required]],
 
-        ],
-        vehicleType:[
-            ''
-        ]
+        chasisNumber: ['',[Validators.required]],
+        vehicleType:[ ''],
+        vehicleAge:['']
 
-    }
+    });
 
 
 
-
-    );
     public get vehicleregistration(): FormGroup {
         return this._vehicleregistration;
     }
@@ -65,49 +41,54 @@ export class VehicleRegistrationComponent implements OnInit {
         this._vehicleregistration = value;
     }
 
+    public registerdata: any;
     constructor(private _fb: FormBuilder, private vs: VehicleregistrationService, private _router: Router) { }
 
-public getallvehicles():void{
-
-    this.vs.addVehicleData(this._vehicleregistration.value).subscribe((result: any) => {console.log(result);
-    })
-}
-
-
-
-
-  ngOnInit(): void {
+    ngOnInit(): void {
 
    
+        this.getallvehicles();
+    
+    
+    
+      }
+
+      public savedata(): void {
+
+        this.vs.addVehicleData(this._vehicleregistration.value).subscribe(result => {
+
+            alert(`data added successfully=${result}`);
+        });
+
+         }
+    private getallvehicles(): void {
+
+        this.vs.getallvehicles().subscribe(data => { this.registerdata = data });
+
+    }
+
+      submitData(data: any) {
+     
+        console.log(data)
 
 
-
-
-  }
-
-
-
-  submitData(data :any) {
-
-    this.vs.addVehicleData(data).subscribe(
-
-  
-        {
-            next: (result: any) => alert(result),
+            this.vs.addVehicleData(data).subscribe(
+               
+              
+            {
+                    next: (result: any) => alert("data saved successfully"),
+                    error: (err) => console.log(err),
+                complete: () => {
+                         this._router.navigateByUrl('https://localhost:44363/api/Buyinsurance');
+                   }
+            
+           
+                });
+    
+      }
+      
        
-        complete: () => {
-            this._router.navigate(['/plan-table'])
-           }
-    
-   
-        })
-
-
-
-    ;
-
-    
-
-  }
 
 }
+  
+    

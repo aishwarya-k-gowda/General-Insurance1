@@ -1,0 +1,93 @@
+<br> <br> <br>
+<form [formGroup]="RenewForm" (ngSubmit)="onFormSubmit(RenewForm.value)"> 
+<div class="head">
+    <h1>Enter Details to Renew Insurance</h1>
+    </div> <br>
+     <div class="box1">   
+        <div class="header">
+            <h1>Enter The Below Credentials </h1>    
+          </div>
+   
+        <div class="form-group">
+            <label for="policyNumber">Enter your PolicyNumber:&nbsp;</label>
+            <input type="number" class="form-control" name="policyNumber" id="policyNumber" formControlName="policyNumber">
+        </div>
+    
+        <!-- <div [hidden]="renewform.controls['policyNumber'].valid || renewform.controls['policyNumber'].pristine"
+            class="alert alert-danger">
+            <div *ngIf="renewform.controls['policyNumber'].errors?.['required']">
+                 please enter your Policy number
+            </div>
+            </div> -->
+        
+            <div class="form-group">
+                <label for="contactNo">Enter your Contact number:&nbsp;</label>
+                <input type="text" class="form-control" name="contactNo" id="contactNo" formControlName="contactNo">
+            </div>
+        
+            <!-- <div [hidden]="renewform.controls['contactNo'].valid || renewform.controls['contactNo'].pristine"
+                class="alert alert-danger">
+                <div *ngIf="renewform.controls['contactNo'].errors?.['required']">
+                   kindly provide contact number 
+                </div>
+            </div>  -->
+            <div class="form-group">
+                <label for="email">Please enter your Email:&nbsp;</label>
+                <input type="email" class="form-control" name="email" id="email" formControlName="email">
+            </div>
+        
+            <!-- <div [hidden]="renewform.controls['email'].valid || renewform.controls['email'].pristine"
+                class="alert alert-danger">
+                <div *ngIf="renewform.controls['email'].errors?.['required']">
+                    please enter your email
+                </div>
+                <div *ngIf="renewform.controls['email'].errors?.['email']">
+                    please ensure that the text you entered must be an email id
+                </div>
+            </div> <br> -->
+        <br> <br>
+    
+    <div id="submitDiv">
+        <button type="submit"  style=" background-color: blue; font-size: large;" class="btn btn-block btn-success">Submit</button>  &nbsp;
+        <button type="submit" style=" background-color: blue; font-size: large;" class="btn btn-block btn-success" routerLink="/plan-table">Next</button> 
+        <!-- <button type="submit" class="btn btn-success"  routerLink="/plan-table" [disabled]="!Userform.valid">Submit</button> -->
+    </div>
+   
+    
+    </div>
+    </form>
+
+    <!-- <div class="head2">
+        <h1></h1>
+        </div> -->
+
+
+        <!-- <div class="container" style="padding-top:40px;">  
+            <div class="row">  
+              <div class="col-md-6 mx-auto">  
+                <div class="card mx-4">  
+                  <div class="card-body p-4">  
+                    <form [formGroup]="UserForm" (ngSubmit)="onFormSubmit(UserForm.value)">  
+                      <h1 style="text-align:center">Renew Insurance</h1>  
+                    
+                      <div class="input-group mb-3">  
+                       
+                        <input type="text" class="form-control" placeholder="policyNumber"  formControlName="policyNumber">  
+                      </div>  
+                      <div class="input-group mb-3">  
+                       
+                        <input type="text" class="form-control" placeholder="contactNo"  formControlName="contactNo">  
+                      </div>
+                      <div class="input-group mb-3">  
+                        <input type="text" class="form-control" placeholder="email"  formControlName="email">  
+                      </div>  
+                      
+                     
+                      <button type="submit" class="btn btn-block btn-success">Submit</button>  
+                      <button type="submit" class="btn btn-block btn-success" [routerLink]="['plan-table']">Next</button> 
+                    </form>  
+                  </div>  
+                </div>  
+              </div>  
+            </div>  
+          </div>   -->

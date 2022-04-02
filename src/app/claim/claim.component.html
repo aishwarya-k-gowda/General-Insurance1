@@ -1,0 +1,71 @@
+<br> <br> <br>
+<form [formGroup]="ClaimForm" (ngSubmit)="onFormSubmit(ClaimForm.value)"> 
+
+    <div class="head">
+       <h1 >Enter Your Claim Details </h1> 
+    </div>
+    <div class="box1">
+    <div class="header">
+        <h1>Please Enter The Below Credentials </h1>    
+      </div>
+  
+    <div class="form-group">
+        <label for="policyNumber">Enter your PolicyNumber:&nbsp;</label>
+        <input type="number" class="form-control" name="policyNumber" id="policyNumber" formControlName="policyNumber">
+    </div> <br>
+    
+  
+<!--   <div [hidden]="claim.controls['policynumber'].valid || claim.controls['policynumber'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="claim.controls['policynumber'].errors?.['required']">
+             Please enter your fullname 
+        </div>
+        </div> -->
+    
+        <div class="form-group">
+            <label for="contactNo">Enter your Contact number:&nbsp;</label>
+            <input type="text" class="form-control" name="contactNo" id="contactNo" formControlName="contactNo">
+        </div> <br>
+    
+        <!-- <div [hidden]="claim.controls['phnnumber'].valid || claim.controls['phnnumber'].pristine"
+            class="alert alert-danger">
+            <div *ngIf="claim.controls['phnnumber'].errors?.['required']">
+               kindly provide contact number 
+            </div>
+        </div> <br> -->
+
+        <div class="form-group">
+          <label for="claimreason1" style="color: black;font-size: large;" ><b>Choose Reason to claim Insurance:</b></label> <br>
+       </div> <br> 
+       <div> &nbsp; &nbsp;
+       <select  class="form-control" name="claimreason1" formControlName="claimreason1" id="claimreason1"> <br> 
+            <option value="Natural Disaster">Natural Disaster</option>
+            <option value="Man Made Disaster">Man Made Disaster</option>
+            <option value="Road Accident">Road Accident</option>
+            <option value="Theft">Theft</option>
+           
+          </select>
+        </div>
+
+       
+             
+            <!-- <div [hidden]="claim.controls['Category'].valid || claim.controls['Category'].pristine"
+            class="alert alert-danger">
+            <div *ngIf="claim.controls['Category'].errors?.['required']">
+                Select a catogery from the list
+            </div>
+            </div> -->
+          <!-- </div> <br> -->
+        
+          <div id="submitDiv">
+            <button type="submit" style=" background-color: blue; font-size: large;" class="btn btn-block btn-success">Submit</button>  
+            &nbsp;
+            <button type="submit" style=" background-color: blue; font-size: large;" class="btn btn-block btn-success" routerLink="/claimhistory">Next</button> 
+            <!-- <button type="submit" class="btn btn-success"  routerLink="/plan-table" [disabled]="!Userform.valid">Submit</button> -->
+        </div>
+  </div>
+  </form>
+  
+  <!-- <div class="head2">
+    <h1> </h1> 
+  </div> -->

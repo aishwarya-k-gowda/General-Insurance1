@@ -1,0 +1,85 @@
+<!-- <div class="container">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Claim No</th>
+            <th>POlicy No</th>
+            <th>Contact NO</th>
+            <th>Claim Reason</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let val of claimhistory">
+          <td>{{ val.ClaimNo }}</td>
+          <td>{{ val.policyNumber }}</td>
+          <td>{{ val.ContactNo }}</td>
+          <td>{{val.Claimreason }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+
+<!-- Start Styles. Move the 'style' tags and everything between them to between the 'head' tags -->
+
+    <!-- End Styles -->
+    
+
+
+<div> <br> <br> <br></div>
+
+<div>
+  <div class="head">
+<h1 style="text-align: center; color: rgb(244, 246, 249);">Claim History</h1>
+</div>
+<br>
+<br>
+<br>
+
+<div style="text-align: center;"> 
+
+<button type="button" style="color: white; background-color: blue; font-size: large;" class="btn btn-success btn-lg mt-5 ml-5" (click)="get_api()">Claim History</button>
+</div>
+<!-- <div *ngFor="let item of claimhistories">
+    
+    <div>{{ item.policyNumber }}</div>
+    <div>{{ item.contactNo }}</div>
+    <div>{{ item.claimreason1 }}</div>
+</div> -->
+<br> <br> <br>
+<div>
+<div class="container">
+    <table class="claimTable" style="margin: auto">
+      <thead>
+          <tr>
+            
+            <th>PolicyNumber</th> 
+            <th>ContactNo</th> 
+            <th>Claim Reason</th> 
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of claimhistories">
+            
+          <td>{{item.policyNumber }}</td>
+          <td>{{item.contactNo }}</td>
+          <td>{{item.claimreason1 }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+
+</div>
+</div>
+
+
+{{claimhistories|json}}
+
+<br> <br>
+
+ <br><br>
+ <div style="text-align: center; ">
+<div class="homebtn">
+<div style="text-align:center; margin-top: 40px;"> <button type="submit" style="background-color:cornsilk; font-size: large;" class="btn btn-primary" routerLink="/home">Home</button> </div>
+</div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,60 @@
+.h1{
+        width: auto;
+        height: 70px;
+        background-color: rgb(38, 49, 152);
+        text-align: center;
+        font-size: larger;
+        color: white;
+     
+        position: relative;
+     top: 10px;  
+    
+}
+
+.box{
+    margin-top: 60px;
+    width: 700px;
+    height: 350px;
+    border: solid;
+   
+    text-align: center;
+   margin-left: 600px;
+   background-color:  rgb(100, 95, 131);
+}
+.head2 h1{
+    width: max-width;
+    height: 70px;
+    background-color: rgb(44, 44, 160);
+    text-align: center;
+    color: white;
+ 
+position: relative;
+top: 30px;
+}
+.box input{
+    width: 200px;
+    height: 50px;
+  
+    position: relative;
+    top: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.box button{
+    position: relative;
+    top: 60px;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+}
+
+.box p{
+    position: relative;
+    top: 70px;
+    font-size: 20px;
+    font-weight: 700;
+}

@@ -1,0 +1,44 @@
+.type{
+    border: solid;
+    width: 500px;
+    height: 400px;
+   
+  text-align: center;
+    margin-top: 30px;
+    margin-left: 700px;
+    background-color: lightslategray;
+}
+.head h1{
+    width: max-width;
+    height: 70px;
+    background-color: rgb(44, 44, 160);
+    text-align: center;
+    color: white;
+  
+position: relative;
+top: 10px;
+}
+
+.flex .item1 button{
+width: 200px;
+height: 80px;
+margin-top: 60px;
+font-size: 20px;
+font-weight: 900;
+
+color: blueviolet;
+}
+.head2 h1{
+    width: max-width;
+    height: 70px;
+    background-color: rgb(44, 44, 160);
+    text-align: center;
+    color: white;
+  
+
+}
+.head2{
+    position: relative;
+    top: 50px;
+    
+}

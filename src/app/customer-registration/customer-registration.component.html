@@ -1,0 +1,152 @@
+<!-- <br> <br> <br>
+
+<form [formGroup]="registrationform" #formdata= "ngForm" (ngSubmit)="submitData(formdata.value)">
+    <div class="head"> 
+        <h1>Enter Your Details!</h1>
+    </div>
+  
+   <div class="box1">  
+    <div class="header">
+        <h1>Please Register Here </h1>    
+      </div>
+
+    <div class="form-group" >
+        <label for="userName">please enter your FullName:&nbsp;</label>
+        <input type="text" class="form-control" name="userName" id="userName"  formControlName="userName">
+    </div>
+
+    <div [hidden]="registrationform.controls['userName'].valid || registrationform.controls['userName'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['userrName'].errors?.['required']">
+             please enter your Full Name 
+        </div>
+        </div> <br>
+    
+    <div class="form-group">
+        <label for="email">Please enter your Email:&nbsp;</label>
+        <input type="email" class="form-control" name="email" id="email" formControlName="email">
+    </div>
+
+    <div [hidden]="registrationform.controls['email'].valid || registrationform.controls['email'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['email'].errors?.['required']">
+            please enter your email
+        </div>
+        <div *ngIf="registrationform.controls['email'].errors?.['email']">
+            please ensure that the text you entered must be an email id
+        </div>
+    </div> <br>
+
+     <div class="form-group" >
+        <label for="dob">please enter your Date of Birth:&nbsp;</label>
+        <input type="date" class="form-control" name="dob" id="dob"  formControlName="dob">
+    </div>
+
+    <div [hidden]="registrationform.controls['dob'].valid || registrationform.controls['dob'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['dob'].errors?.['required']">
+             please enter your DateOfBirth
+        </div>
+        </div> <br>  
+
+    <div class="form-group">
+        <label for="contactNo">Enter your Contact number:&nbsp;</label>
+        <input type="text" class="form-control" name="contactNo" id="contactNo" formControlName="contactNo">
+    </div>
+
+    <div [hidden]="registrationform.controls['contactNo'].valid || registrationform.controls['contactNo'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['contactNo'].errors?.['required']">
+           kindly provide contact number 
+        </div>
+    </div> <br>
+
+    
+   
+
+    <div class="form-group">
+        <label for="Address">please enter your Address:&nbsp;</label>
+        <input type="text" class="form-control" name="Address" id="Address" formControlName="Address">
+    </div>
+
+    <div [hidden]="registrationform.controls['Address'].valid || registrationform.controls['Address'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['Address'].errors?.['required']">
+              please provide your Address
+        </div>
+    </div> <br>
+
+    <div class="form-group">
+        <label for="password">Enter your Password:&nbsp;</label>
+        <input type="text" class="form-control" name="password" id="password" formControlName="password">
+    </div>
+
+    <div [hidden]="registrationform.controls['password'].valid || registrationform.controls['password'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['password'].errors?.['required']">
+            plese provide a strong password
+        </div> 
+        
+
+    
+       
+        <div *ngIf="registrationform.controls['password'].errors?.['minlengtherror']">
+            Password length should be length:
+            {{registrationform.controls['password'].errors?.['minlengtherror'].expectedlength}}.
+            Current length:
+            length:{{registrationform.controls['password'].errors?.['minlengtherror'].currentlength}}
+        </div>
+        <div *ngIf="registrationform.controls['password'].errors?.['maxlengtherror']">
+            Password length should NOT be more
+            than{{registrationform.controls['password'].errors?.['maxlengtherror'].expectedlength}}. Current
+            length:{{registrationform.controls['password'].errors?.['maxlengtherror'].currentlength}}
+        </div>
+
+        <div *ngIf="registrationform.controls['password'].errors?.['uppercase']">
+            {{registrationform.controls['password'].errors?.['uppercase']}}
+        </div>
+
+        <div *ngIf="registrationform.controls['password'].errors?.['lowercase']">
+            {{registrationform.controls['password'].errors?.['lowercase']}}
+        </div>
+
+        <div *ngIf="registrationform.controls['password'].errors?.['digit']">
+            {{registrationform.controls['password'].errors?.['digit']}}
+        </div>
+    </div >
+    <div *ngIf="registrationform.controls['password'].errors?.['splchar']">
+        {{registrationform.controls['password'].errors?.['splchar']}}
+    </div> <br>
+    
+    <div class="form-group">
+        <label for="retypepassword">please Confirm your Password:&nbsp;</label>
+        <input type="text" class="form-control" name="retypepassword" id="retpepassword" formControlName="retypepassword">
+    </div>
+    <div [hidden]="registrationform.controls['retypepassword'].valid || registrationform.controls['retypepassword'].pristine"
+        class="alert alert-danger">
+        <div *ngIf="registrationform.controls['retypepassword'].errors?.['required']">
+            Please re-enter your Password 
+        </div>    
+        <div *ngIf="registrationform.controls['retypepassword'].errors?.['conformedValiator']">
+           please make sure that password and confirm password should be same
+        </div>   
+            
+       
+    </div> <br>
+    <div id="submitDiv">
+        <button   type="submit"  class="btn btn-success"   [disabled]="!registrationform.valid">Submit</button>
+
+        <br>
+        <br>
+        <br>
+        <button routerLink="/vehicle-registration"  class="btn btn-success" 
+        style="color: Black;">
+            Next
+        </button>
+    </div>
+</div>
+
+
+
+</form>
+ -->
